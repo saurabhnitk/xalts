@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Xalts Assignment">
+	<listeners>
+		<listener class-name="xalts.Listeners" />
+	</listeners>
+	<test name="Test">
+		<parameter name="email" value="test123@xalts.io" />
+		<parameter name="password" value="Qwerty@1234" />
+		<classes>
+			<class name="tests.Test" />	
+		</classes>
+	</test>	
+</suite> <!-- Suite -->
