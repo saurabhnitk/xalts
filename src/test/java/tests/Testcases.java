@@ -1,10 +1,11 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Test extends BaseTest{
+public class Testcases extends BaseTest{
 
 	WebDriver driver;
 	
@@ -15,7 +16,7 @@ public class Test extends BaseTest{
 		login.enterEmail(email);
 		login.enterPassword(password);
 		login.confirmPassword(password);
-		login.clickSignupButton();
+		Assert.assertTrue(!login.checkSignUpButtonIsEnabled());
 	}
 	
 	@Test(description="verify Sign Up button remains disabled if user enters valid email id and password not containing uppercase letter",priority=2)
@@ -24,7 +25,8 @@ public class Test extends BaseTest{
 		login.enterEmail(email);
 		login.enterPassword(password);
 		login.confirmPassword(password);
-		login.clickSignupButton();
+		Thread.sleep(1000);
+		Assert.assertTrue(!login.checkSignUpButtonIsEnabled());
 	}
 
 	@Test(description="verify Sign Up button remians disabled if user enters valid email id and password not containing lowercase letter",priority=3)
@@ -32,7 +34,8 @@ public class Test extends BaseTest{
 	public void userSignupPasswordNoLowercaseLetter(String password) throws InterruptedException {
 		login.enterPassword(password);
 		login.confirmPassword(password);
-		login.clickSignupButton();
+		Thread.sleep(1000);
+		Assert.assertTrue(!login.checkSignUpButtonIsEnabled());
 	}
 
 	@Test(description="verify Sign Up button remians disabled if user enters valid email id and password not containing number",priority=4)
@@ -40,7 +43,8 @@ public class Test extends BaseTest{
 	public void userSignupPasswordNotContainingNumber(String password) throws InterruptedException {
 		login.enterPassword(password);
 		login.confirmPassword(password);
-		login.clickSignupButton();
+		Thread.sleep(1000);
+		Assert.assertTrue(!login.checkSignUpButtonIsEnabled());
 	}
 
 	@Test(description="verify Sign Up button remians disabled if user enters valid email id and password not containing special character",priority=5)
@@ -48,7 +52,8 @@ public class Test extends BaseTest{
 	public void userSignupPasswordNotContainingSpecialCharacter(String password) throws InterruptedException {
 		login.enterPassword(password);
 		login.confirmPassword(password);
-		login.clickSignupButton();
+		Thread.sleep(1000);
+		Assert.assertTrue(!login.checkSignUpButtonIsEnabled());
 	}
 
 	@Test(description="verify Sign Up button remians disabled if user enters valid email id and password length less than 8",priority=6)
@@ -56,7 +61,8 @@ public class Test extends BaseTest{
 	public void userSignupPasswordLengthLessThanEight(String password) throws InterruptedException {
 		login.enterPassword(password);
 		login.confirmPassword(password);
-		login.clickSignupButton();
+		Thread.sleep(1000);
+		Assert.assertTrue(!login.checkSignUpButtonIsEnabled());
 	}
 
 	@Test(description="verify user is able to sign up with valid email and password",priority=7)
@@ -64,6 +70,8 @@ public class Test extends BaseTest{
 	public void userSignupWithValidEmailAndPassword(String password) throws InterruptedException {
 		login.enterPassword(password);
 		login.confirmPassword(password);
+		Thread.sleep(1000);
+		Assert.assertTrue(!login.checkSignUpButtonIsEnabled());
 		login.clickSignupButton();
 		login.clickSignoutButton();
 	}

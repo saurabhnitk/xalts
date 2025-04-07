@@ -66,11 +66,18 @@ public class Login {
 		confirmPasswordField.sendKeys(password);
 	}
 	
+	public boolean checkSignUpButtonIsEnabled() {
+		if(signupButton.isDisplayed() && signupButton.isEnabled()) {
+			return true;
+		}
+		return false;
+	}
+	
 	public void clickSignupButton() {
-		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		//wait.until(ExpectedConditions.elementToBeClickable(signupButton));
 		signupButton.click();
-		//wait.until(ExpectedConditions.visibilityOf(getStartedButton));
+		wait.until(ExpectedConditions.visibilityOf(getStartedButton));
 	}
 	
 	public void clickSignoutButton() {

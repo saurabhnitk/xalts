@@ -9,12 +9,12 @@
 		<parameter name="password" value="Qwerty@56" />
 		<parameter name="invalid_email" value="145645632987" />
 		<parameter name="password_no_uppercase" value="qwerty@56" />
-		<parameter name="password_no_lowercase" value="Qwerty@1234" />
+		<parameter name="password_no_lowercase" value="QWERTY@56" />
 		<parameter name="password_without_number" value="QWERTY@qwerty" />
 		<parameter name="password_without_special_character" value="Qwerty56" />
 		<parameter name="password_length_less_than_eight" value="Qwerty5" />
 		<classes>
-			<class name="tests.Test" />	
+			<class name="tests.Testcases" />	
 		</classes>
 	</test>	
 </suite> <!-- Suite -->
