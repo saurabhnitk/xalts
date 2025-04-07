@@ -52,22 +52,25 @@ public class Login {
 	}
 	
 	public void enterEmail(String email) {
+		emailField.clear();
 		emailField.sendKeys(email);
 	}
 	
 	public void enterPassword(String password) {
+		passwordField.clear();
 		passwordField.sendKeys(password);
 	}
 	
 	public void confirmPassword(String password) {
+		confirmPasswordField.clear();
 		confirmPasswordField.sendKeys(password);
 	}
 	
 	public void clickSignupButton() {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.elementToBeClickable(signupButton));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//wait.until(ExpectedConditions.elementToBeClickable(signupButton));
 		signupButton.click();
-		wait.until(ExpectedConditions.visibilityOf(getStartedButton));
+		//wait.until(ExpectedConditions.visibilityOf(getStartedButton));
 	}
 	
 	public void clickSignoutButton() {
